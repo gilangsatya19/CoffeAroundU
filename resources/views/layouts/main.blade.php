@@ -51,7 +51,7 @@
             
         @show
  
-        <div class="container w-100">
+        <div class="">
             @yield('content')
         </div>
 

@@ -26,6 +26,9 @@ Route::get('/sign-in', function () {
 Route::get('/sign-up', function () {
     return view('coffee.signUp');
 });
+Route::get('/register', function () {
+    return view('coffee.register');
+});
 
 Route::resource('/home/my_toko', TokoController::class);
 
