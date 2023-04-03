@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password')->required;
             $table->string('phone_number')->required;
             $table->string('role')->required;
-            $table->foreignId('id_toko')->constrained('tokos');
+            $table->foreignId('id_toko')->constrained('tokos')->unsigned()->nullable()->change();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
