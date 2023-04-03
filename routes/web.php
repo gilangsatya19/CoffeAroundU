@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +26,7 @@ Route::get('/sign-in', function () {
 Route::get('/sign-up', function () {
     return view('coffee.signUp');
 });
+
+Route::resource('/home/my_toko', TokoController::class);
+
+Route::resource('home/my_products', ProductController::class);
