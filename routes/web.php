@@ -16,27 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('coffee.index');
-});
-
-// Route::get('/sign-in', function () {
-//     return view('coffee.signIn');
-// });
-
-// Route::get('/sign-up', function () {
-//     return view('coffee.signUp');
-// });
-// Route::get('/register-cafe', function () {
-//     return view('coffee..main.registerCafe');
-// });
-// Route::get('/register-coffee', function () {
-//     return view('coffee.main.registerCoffee');
-// });
-
-// Route::get('/home', function () {
-//     return view('coffee.main.home');
-// });
 
 // Route::get('/coffee/index', [UserController::class, 'create'])->name('create.obat');
 Route::get('/coffee/sign-up', [UserController::class, 'create'])->name('create.user');
