@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('map');
-            $table->index('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('id_user')->constrained('users');
             $table->timestamps();
         });
     }
