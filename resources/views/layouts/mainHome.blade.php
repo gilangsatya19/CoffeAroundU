@@ -37,11 +37,6 @@
                             </li>
                         </ul>
                         <div>
-                            <a href="/sign-in" type="button" class="btn rounded-3 mx-3 fw-semibold" style="background-color: white;font-size:16px;height:35px" >Sign In</a>
-                            <a href="{{route('create.user')}}" type="button" class="btn rounded-3 mx-4 fw-semibold text-white" style="background-color: #4A2C2A;font-size:16px;height:35px">Sign Up</a>
-                        </div>
-                        
-                        <div>
                             <img class="style-scope mx-3" src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}" height="40" width="40" alt="">
                         </div>
                         

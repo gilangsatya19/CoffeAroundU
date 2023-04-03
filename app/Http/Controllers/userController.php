@@ -13,10 +13,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('', [
-            'data' => User::get()
-        ]);
+        $users = User::all();
+        return view('coffee.main.home', compact('users'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -24,11 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('', [
-            'title' => 'Register User',
-            'method' => 'POST',
-            'action' => 'home',
-        ]);
+        return view('coffee.signUp');
     }
 
     /**
@@ -37,16 +33,26 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      */
     public function store(Request $request)
-    {
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->phone_number = $request->phone_number;
-        $user->role = $request->role;
-        $user->idToko = NULL;
-        $user->save();
-        return redirect('\home')->with('msg', 'sukses');
+    {   
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'phone_number' => $request->phone_number,
+            'address' => $request->address,
+            'role' => $request->role,
+            // 'id_toko' => $request->id,
+        ]);
+        return redirect()->route('home.user')->with('msg', 'success.');
+        // $user = new User;
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->password = $request->password;
+        // $user->phone_number = $request->phone_number;
+        // $user->role = $request->role;
+        // $user->idToko = NULL;
+        // $user->save();
+        // return redirect('\home')->with('msg', 'sukses');
     }
 
     /**
