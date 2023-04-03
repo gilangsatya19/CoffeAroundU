@@ -15,7 +15,6 @@
                 <p class="fw-bold mb-5 text-center" style="font-size: 50px">Sign In</p>
                 <div class="mb-5 border border-2 border-black" style="height:24rem;width:60rem;align-items:center">
                     <div class="mx-5 my-5 ">
-                        
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email</label>
                             <input type="text" class="form-control border-black rounded-0"  placeholder="Enter Email" name="email" required>
@@ -28,9 +27,7 @@
                         <div>
                             <button class="btn btn-primary fw-semibold px-4" style="background-color: #4A2C2A" type="submit">Login</button>
                         </div>
-
                     </div>
-                    
                 </div>
             </div>
             
