@@ -13,18 +13,14 @@
         <div class="container d-flex justify-content-center my-5">
             <div class="my-3">
                 <p class="fw-bold mb-5 text-center" style="font-size: 50px">Sign Up</p>
-                <div class="mb-5 border border-2 border-black" style="height:50rem;width:60rem;align-items:center">
+                <div class="mb-5 border border-2 border-black" style="height:45rem;width:60rem;align-items:center">
                     <div class="mx-5 my-5 ">
-                        <div class="form-inline">
-                            <div class="form-group mb-3">
-                                <label for="email">First Name</label>
-                                <input type="email" class="form-control border-black rounded-0" id="email" placeholder="Enter First Name" name="first_name">
-                              </div>
-                              <div class="form-group mb-3">
-                                <label for="pwd">Last Name</label>
-                                <input type="password" class="form-control border-black rounded-0" id="pwd" placeholder="Enter Last Name" name="pwd">
-                              </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="email">Name</label>
+                            <input type="email" class="form-control border-black rounded-0" id="email" placeholder="Enter First Name" name="first_name">
                         </div>
+                        
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email</label>
                             <input type="text" class="form-control border-black rounded-0"  placeholder="Enter Email" name="email" required>
