@@ -43,7 +43,7 @@ class UserController extends Controller
             'role' => $request->role,
             // 'id_toko' => $request->id,
         ]);
-        return redirect()->route('home.user')->with('msg', 'success.');
+        return redirect()->route('index')->with('msg', 'success.');
         // $user = new User;
         // $user->name = $request->name;
         // $user->email = $request->email;
@@ -72,12 +72,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('', [
-            'title' => 'Edit Profile',
-            'method' => 'PUT',
-            'action' => 'home/'.$id,
-            'data' => User::find($id),
-        ]);
+        $user = User::find($id);
+        return view('user.update', compact('user'));
     }
 
     /**
@@ -94,9 +90,9 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->phone_number = $request->phone_number;
         $user->role = $request->role;
-        $user->idToko = NULL;
+        // $user->idToko = NULL;
         $user->save();
-        return redirect('\home')->with('msg', 'sukses');
+        return redirect('home.user')->with('msg', 'sukses');
     }
 
     /**
