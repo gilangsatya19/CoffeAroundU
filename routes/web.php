@@ -31,6 +31,11 @@ Route::resource('/home/my_toko', TokoController::class);
 
 Route::resource('home/my_products', ProductController::class);
 
+// SEMENTARA
 Route::get('home/edit_product', function() {
     return view('coffee.editProduct');
+});
+
+Route::get('home/sign-in', function() {
+    return view('coffee.signIn');
 });
