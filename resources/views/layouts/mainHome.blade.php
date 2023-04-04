@@ -13,36 +13,146 @@
                 background: url('{{asset('coffeeAroundU/assets/halaman_awal/register.png')}}');
                 
             }
-           
+            .nav-atas {
+            background: #fff;
+            width: 100%;
+            padding: 10px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            }
+
+            .logo {
+                width: 90px;
+            }
+
+            .user-pic {
+                width: 40px;
+                border-radius: 50px;
+                cursor: pointer;
+                margin-left: 30px;
+            }
+
+            nav ul {
+                width: 100%;
+                text-align: left;
+            }
+
+            .nav-atas ul li {
+                display: inline-block;
+                list-style: none;
+                margin: 10px 20px;
+            }
+
+            .nav-atas ul li a {
+                color: #000000;
+                text-decoration: none;
+            }
+
+            .sub-menu-wrap {
+                position: absolute;
+                top: 100%;
+                right: 10%;
+                width: 500px;
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-height: 0.5s;
+            }
+            .sub-menu-wrap.open-menu{
+                max-height: 400px;
+            }
+            .sub-menu{
+                border: 2px solid #898686;
+                border-radius: 25px;
+                background: #ffffff;
+                padding: 20px;
+                margin: 10px;
+            }
+            .user-info{
+                display:flex;
+                align-items: center;
+            }
+            .user-info h3{
+                font-weight: 500;
+            }
+            .user-info img{
+                width:60px;
+                border-radius: 50%;
+                margin-right: 15px;
+            }
+            .sub-menu hr{
+                border:0;
+                height:1px;
+                width:100%;
+                background: #ccc;
+                margin: 15px 0 10px;
+            }
+            .sub-menu-link{
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: #525252;
+                margin: 12px 0;
+            }
+            .sub-menu-link p{
+                width:100%;
+            }
+            .sub-menu-link img{
+                width: 40px;
+                background: #e5e5e5;
+                border-radius: 50%;
+                padding: 8px;
+                margin-right: 15px;
+            }
+            .sub-menu-link span{
+                font-size: 22px;
+            }
+            .sub-menu-link span{
+                font-size:16px;
+            }
+            
         </style>
     </head>
     <body>
         @section('navbar')
-            <nav class="navbar navbar-expand-lg bg-white ">
-                <div class="container-fluid">
-                    <a class="navbar-brand mx-4" href="/"><img src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" width="90px" height="90px" alt="logo-coffeAroungU"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item mx-5">
-                                <a class="nav-link fw-bold" aria-current="page" href="/">Home</a>
-                            </li>
-                            <li class="nav-item mx-5">
-                                <a class="nav-link fw-bold" aria-current="page" href="/about">About Us</a>
-                            </li>
-                            <li class="nav-item mx-5">
-                                <a class="nav-link fw-bold" href="/contact">Contact Us</a>
-                            </li>
-                        </ul>
-                        <div>
-                            <img class="style-scope mx-3" src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}" height="40" width="40" alt="">
-                        </div>
-                        
+            <nav class="nav-atas">
+                <img src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" class="logo">
+                <ul>
+                    <li><a href="#" class="fw-semibold">Home</a></li>
+                    <li><a href="#" class="fw-semibold">About Us</a></li>
+                    <li><a href="#" class="fw-semibold">Menu in Area</a></li>
+                    <li><a href="#" class="fw-semibold">Show My Menu</a></li>
+                </ul>
+                <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}" class="user-pic" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                    <a href="#" class="sub-menu-link">
+                        <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
+                        <p class="fw-semibold text-dark">Muhammad Goblin</p>
+                        <span class="text-decoration-underline ">Edit</span>
+                    </a>
+                    <hr>
+                    <a href="#" class="sub-menu-link">
+                        <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
+                        <p class="fw-semibold text-dark">Your Cafe</p>
+                        <span class="text-decoration-underline ">Edit</span>
+                    </a>
+                    <hr>
+                    <a href="#" class="sub-menu-link">
+                        <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
+                        <p class="fw-semibold text-dark">Logout</p>
+                        <span></span>
+                    </a>
                     </div>
                 </div>
             </nav>
+        <script>
+            let subMenu = document.getElementById("subMenu");
+             function toggleMenu(){
+                subMenu.classList.toggle("open-menu");
+             }
+        </script>
             
         @show
  
