@@ -16,16 +16,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
+Route::get('/home', function () {
     return view('coffee.index');
 });
 
 // Route::get('/coffee/index', [UserController::class, 'create'])->name('create.obat');
-Route::get('/coffee/sign-up', [UserController::class, 'create'])->name('create.user');
-Route::post('/coffee/store', [UserController::class, 'store'])->name('store.user');
-Route::get('/coffee/main/home', [UserController::class, 'index'])->name('home.user');
+Route::get('/home/sign-up', [UserController::class, 'create'])->name('create.user');
+Route::post('/home/store', [UserController::class, 'store'])->name('store.user');
+Route::get('/home/main/home', [UserController::class, 'index'])->name('home.user');
 
 
 Route::resource('/home/my_toko', TokoController::class);
 
+
 Route::resource('home/my_products', ProductController::class);
+
+Route::get('home/edit_product', function() {
+    return view('coffee.editProduct');
+});
