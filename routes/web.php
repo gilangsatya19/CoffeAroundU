@@ -37,5 +37,10 @@ Route::get('home/edit_product', function() {
 });
 
 Route::get('home/sign-in', function() {
-    return view('coffee.signIn');
+    return view('coffee.signIn  ');
 });
+
+Route::get('home/my-profile', function() {
+    return view('coffee.profile  ');
+});
+
