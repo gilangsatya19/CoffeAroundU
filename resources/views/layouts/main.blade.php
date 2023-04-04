@@ -27,7 +27,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item mx-5">
-                                <a class="nav-link fw-bold" aria-current="page" href="/">Home</a>
+                                <a class="nav-link fw-bold" aria-current="page" href="/home">Home</a>
                             </li>
                             <li class="nav-item mx-5">
                                 <a class="nav-link fw-bold" aria-current="page" href="/about">About Us</a>
@@ -37,7 +37,7 @@
                             </li>
                         </ul>
                         <div>
-                            <a href="/sign-in" type="button" class="btn rounded-3 mx-3 fw-semibold" style="background-color: white;font-size:16px;height:35px" >Sign In</a>
+                            <a href="/home/sign-in" type="button" class="btn rounded-3 mx-3 fw-semibold" style="background-color: white;font-size:16px;height:35px" >Sign In</a>
                             <a href="{{route('create.user')}}" type="button" class="btn rounded-3 mx-4 fw-semibold text-white" style="background-color: #4A2C2A;font-size:16px;height:35px">Sign Up</a>
                         </div>
                         
