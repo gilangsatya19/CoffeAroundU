@@ -29,16 +29,16 @@ Route::get('/about', function () {
 // Route::post('/home/store', [UserController::class, 'store'])->name('store.user');
 // Route::get('/home/main/home', [UserController::class, 'index'])->name('home.user');
 
-Route::resource('/home/login', LoginController::class);
+Route::resource('/login', LoginController::class);
 
 Route::resource('/home', UserController::class);
 
-Route::resource('/home/my_toko', TokoController::class);
+Route::resource('/my_toko', TokoController::class);
 
-Route::resource('/home/my_products', ProductController::class);
+Route::resource('/my_products', ProductController::class);
 
 // SEMENTARA
-Route::get('home/edit_product', function() {
+Route::get('/edit_product', function() {
     return view('coffee.editProduct');
 });
 

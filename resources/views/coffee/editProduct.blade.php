@@ -50,19 +50,18 @@
                     <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
                     </tr>
                     <tr>
-                    <th scope="row">
-                        <div class="p-2">
-                        <img src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/coffee-worlds-biggest-source-of-antioxidants-1296x728-feature.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                        <div class="ml-3 d-inline-block align-middle">
-                            <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Caramel Latte</a></h5><span class="text-muted font-weight-normal font-italic">Telyu Coffee</span>
-                        </div>
-                        </div>
-                    </th>
-                    <td class="align-middle"><strong>Rp15.000,00</strong></td>
-                    <td class="align-middle"><strong>3</strong></td>
-                    <td><input class='btn btn-primary btn-sm' type='button' value='Delete'/></td>
-                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                    </td>
+                        <th scope="row">
+                            <div class="p-2">
+                                <img src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/coffee-worlds-biggest-source-of-antioxidants-1296x728-feature.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                <div class="ml-3 d-inline-block align-middle">
+                                    <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Caramel Latte</a></h5><span class="text-muted font-weight-normal font-italic">Telyu Coffee</span>
+                                </div>
+                            </div>
+                        </th>
+                        <td class="align-middle"><strong>Rp15.000,00</strong></td>
+                        <td class="align-middle"><strong>3</strong></td>
+                        <td><input class='btn btn-primary btn-sm' type='button' value='Delete'/></td>
+                        <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
                     </tr>
                     <tr>
                     <th scope="row">

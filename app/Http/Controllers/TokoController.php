@@ -24,10 +24,10 @@ class TokoController extends Controller
      */
     public function create()
     {
-        return view('', [
+        return view('coffee.main.addCafe', [
             'title' => 'Buat Toko',
             'method' => 'POST',
-            'action' => 'home',
+            'action' => 'my_toko',
         ]);
     }
 
@@ -43,8 +43,10 @@ class TokoController extends Controller
         $toko->nama = $request->nama;
         $toko->map = $request->map;
         $toko->icon_url = $request->icon_url;
+        $_SESSION["toko_id"] = $toko->id;
+        $toko->id_user = $request->session()->get("user_id");
         $toko->save();
-        return redirect('\home')->with('msg', 'sukses');
+        return redirect('/my_products')->with('msg', 'sukses');
     }
 
     /**

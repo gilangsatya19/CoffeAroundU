@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('deskripsi_produk');
-            $table->boolean('has_customization');
             $table->integer('harga');
             $table->float('rating');
             $table->string('foto');

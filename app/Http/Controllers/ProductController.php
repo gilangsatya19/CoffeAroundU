@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('', [
+        return view('coffee.main.home', [
             'data' => Product::get(),
         ]);
     }
@@ -24,10 +24,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('coffee.main.registerCoffee', [
-            'title' => 'Register',
+        return view('coffee.main.addCoffee', [
+            'title' => 'Add ',
             'method' => 'POST',
-            'action' => 'home/my_products',
+            'action' => 'my_products',
         ]);
     }
 
@@ -41,15 +41,14 @@ class ProductController extends Controller
         $prod = new Product;
         $prod->nama = $request->nama;
         $prod->deskripsi_produk = $request->deskripsi_produk;
-        $prod->has_customization = $request->has_customization;
         $prod->harga = $request->harga;
-        $prod->rating = $request->rating;
-        $prod->foto = $request->foto;
-        $prod->available = $request->available;
-        $prod->reason = $request->reason;
-        $prod->id_toko = $request->id_toko;
+        $prod->rating = 0;
+        $prod->foto = $request->foto;   
+        $prod->available = 1;
+        $prod->reason = '';
+        $prod->id_toko = $request->session()->get('toko_id');
         $prod->save();
-        return redirect('/home/main/home')->with('msg', 'sukses');
+        return redirect('/my_products')->with('msg', 'sukses');
     }
 
     /**
