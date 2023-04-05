@@ -10,6 +10,7 @@
  
 @section('content')
     <form action="/{{$action}}" method="POST">
+        @csrf
         <div class="container-fluid ">
             <div class="container d-flex justify-content-center my-5">
                 <div class="my-3">
@@ -31,8 +32,6 @@
                         </div>
                     </div>
                 </div>
-                
-                
             </div>
         </div>
     </form>

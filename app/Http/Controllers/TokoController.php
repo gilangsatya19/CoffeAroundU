@@ -43,9 +43,9 @@ class TokoController extends Controller
         $toko->nama = $request->nama;
         $toko->map = $request->map;
         $toko->icon_url = $request->icon_url;
-        $_SESSION["toko_id"] = $toko->id;
-        $toko->id_user = $request->session()->get("user_id");
+        $toko->id_user = session('user_id');
         $toko->save();
+        session(['toko_id' => $toko->id]);
         return redirect('/my_products')->with('msg', 'sukses');
     }
 

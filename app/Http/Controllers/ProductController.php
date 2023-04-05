@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         return view('coffee.main.home', [
-            'data' => Product::get(),
+            'data' => Product::where('id_toko', session("toko_id"))->get(),
         ]);
     }
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
         $prod->foto = $request->foto;   
         $prod->available = 1;
         $prod->reason = '';
-        $prod->id_toko = $request->session()->get('toko_id');
+        $prod->id_toko = session('toko_id');
         $prod->save();
         return redirect('/my_products')->with('msg', 'sukses');
     }

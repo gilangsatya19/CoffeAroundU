@@ -38,9 +38,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        session_start();
         $user = new User;
-        $request->session()->put('user_id', $user->id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
@@ -49,6 +47,7 @@ class UserController extends Controller
         $user->role = $request->role;
         // $user->idToko = NULL;
         $user->save();
+        session(['user_id' => $user->id]);
         return redirect('/my_toko/create')->with('msg', 'sukses');
     }
 
