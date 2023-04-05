@@ -74,7 +74,7 @@ class UserController extends Controller
             'title' => 'Edit Profile',
             'method' => 'PUT',
             'action' => 'home/edit/'.$id,
-            'data' => Product::find($id),
+            'data' => User::find($id),
         ]);
     }
 
