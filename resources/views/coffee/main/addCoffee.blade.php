@@ -9,33 +9,36 @@
 @endsection
  
 @section('content')
-    <div class="banner" style="height: 100%;width:100%;background: url('{{asset('coffeeAroundU/assets/register/banner_register_cafe.png')}}')">
+    <div class="banner" style="height: 60rem;width:100%;background: url('{{asset('coffeeAroundU/assets/register/banner_register_cafe.png')}}')">
         <div class="container col-lg-10 d-flex justify-content-center" style="height:100%;width:70%">
             
-                <form action="/" method="GET">
+                <form action="/{{$action}}" method="POST">
                     <div class="">
-                        <p class="text-black fw-bold mt-5 fs-1" style="">Register Coffee <br></p>
+                        <p class="text-black fw-bold mt-5 fs-1" style="">{{$title}} Coffee <br></p>
                         <div class="border border-2 border-black bg-white" style="height: 85%;width:50rem"> 
                             <div >
                                 <div class="border border-1 border-black d-flex mt-5 mx-5" style="width: 70%">
                                     <div>
                                         <img class="mx-4" src="{{asset('coffeeAroundU/assets/register/img_cafe.png')}}" width="250px" height="250px" alt="">
 
-                                        <a href="" type="button" class="btn btn-ligth border border-1 border-black">Upload Image</a>
+                                        <div class="mb-3 mx-5">
+                                            <label class="form-label" for="">Upload Gambar</label>
+                                            <input type="file" class="form-control" id="customFile" name="foto" />
+                                        </div>
                                     </div>
                                     
                                 </div>
                                 <div class="my-3 mx-5">
-                                    <label for="exampleInputEmail" class="form-label">Coffee Name</label>
-                                    <input type="text" class="form-control border-black rounded-0"  placeholder="Enter Coffee Name" name="coffee_name" required>
+                                    <label for="name" class="form-label">Coffee Name</label>
+                                    <input type="text" class="form-control border-black rounded-0"  value="{{isset($data)?$data->name:''}}" name="name" required>
                                 </div>
                                 <div class="mb-3 mx-5">
                                     <label for="exampleInputPhone" class="form-label">Price</label>
-                                    <input type="number" class="form-control border-black rounded-0" placeholder="Enter Price" name="coffee_price" required>
+                                    <input type="number" class="form-control border-black rounded-0" value="{{isset($data)?$data->price:''}}" name="price" required>
                                 </div>
                                 <div class="mb-3 mx-5">
                                     <label for="exampleInputAddres" class="form-label">Description</label>
-                                    <input type="text" class="form-control border-black rounded-0" name="coffee_deskription" required>
+                                    <input type="text" class="form-control border-black rounded-0" value="{{isset($data)?$data->coffee_description:''}}" name="coffee_deskription" required>
                                 </div>
                                 <div class="mb-3 mx-5 form-check">
                                     <input type="checkbox" class="form-check-input border-1 border-black" id="exampleCheck1">

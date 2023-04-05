@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class UserController extends Controller
 {
     /**
@@ -13,9 +14,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('coffee.main.home', compact('users'));
+        $data["users"] = User::get();
+        return view('coffee.main.home', $data);
     }
+    
+
+    
     
 
     /**
@@ -24,7 +28,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('coffee.signUp');
+        return view('coffee.signUp', [
+            'title' => 'Tambah akun',
+            'method' => 'POST',
+            'action' => 'home'
+        ]);
     }
 
     /**
@@ -34,25 +42,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
-            'phone_number' => $request->phone_number,
-            'address' => $request->address,
-            'role' => $request->role,
-            // 'id_toko' => $request->id,
-        ]);
-        return redirect()->route('index')->with('msg', 'success.');
-        // $user = new User;
-        // $user->name = $request->name;
-        // $user->email = $request->email;
-        // $user->password = $request->password;
-        // $user->phone_number = $request->phone_number;
-        // $user->role = $request->role;
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->phone_number = $request->phone_number;
+        $user->address = $request->phone_number;
+        $user->role = $request->role;
         // $user->idToko = NULL;
-        // $user->save();
-        // return redirect('\home')->with('msg', 'sukses');
+        $user->save();
+        return redirect('/home')->with('msg', 'sukses');
     }
 
     /**
@@ -72,8 +71,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('user.update', compact('user'));
+        
+        return view('coffee.main.editProfile', [
+            'title' => 'Edit Profile',
+            'method' => 'PUT',
+            'action' => 'home/edit/'.$id,
+            'data' => Product::find($id),
+        ]);
     }
 
     /**
@@ -92,7 +96,7 @@ class UserController extends Controller
         $user->role = $request->role;
         // $user->idToko = NULL;
         $user->save();
-        return redirect('home.user')->with('msg', 'sukses');
+        return redirect('/home')->with('msg', 'sukses');
     }
 
     /**
@@ -105,4 +109,6 @@ class UserController extends Controller
         User::destroy($id);
         return redirect('\home')->with('msg', 'sukses');
     }
+    
+       
 }

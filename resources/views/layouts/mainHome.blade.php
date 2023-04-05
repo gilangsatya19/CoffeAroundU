@@ -22,7 +22,7 @@
             <nav class="nav-atas">
                 <img src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" class="logo">
                 <ul>
-                    <li><a href="/home/main/home" class="fw-semibold">Home</a></li>
+                    <li><a href="/home" class="fw-semibold">Home</a></li>
                     <li><a href="/home/main/about" class="fw-semibold">About Us</a></li>
                     <li><a href="/home/main/menu-in-area" class="fw-semibold">Menu in Area</a></li>
                     <li><a href="/home/main/my-menu" class="fw-semibold">Show My Menu</a></li>
@@ -31,6 +31,7 @@
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
                     <a href="#" class="sub-menu-link">
+                        
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
                         <p class="fw-semibold text-dark">Muhammad Goblin</p>
                         <span class="text-decoration-underline ">Edit</span>

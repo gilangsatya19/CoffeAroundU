@@ -27,23 +27,13 @@
                         <p class="fw-semibold fs-4">Your Coffee (3)</p>
                         <a href="" class="fw-semibold fs-5 text-black mx-4 mt-1">Show My Menu</a>
                     </div>
+                    <p>{{$users}}</p>
+                    
                     
                 </div>
-                
-                
-                
-                <a class="btn btn-primary text-white fw-semibold mt-5" style="font-size: 22px;margin-left:40rem;width:13rem;height: 50px;background-color: #4A2C2A">Add Coffee</a>
-                
-            
-            
-                 
-            
+                <a href="/home/my_products/create" value="tambah" class="btn btn-primary text-white fw-semibold mt-5" style="font-size: 22px;margin-left:40rem;width:13rem;height: 50px;background-color: #4A2C2A">Add Coffee</a>
         </div>
     </div>
-    
-    
-    
-    
     
 @endsection
 

@@ -20,30 +20,25 @@
         @section('navbar')
             <nav class="navbar navbar-expand-lg bg-white ">
                 <div class="container-fluid">
-                    <a class="navbar-brand mx-4" href="/"><img src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" width="90px" height="90px" alt="logo-coffeAroungU"></a>
+                    <a class="navbar-brand mx-4" href="/index"><img src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" width="90px" height="90px" alt="logo-coffeAroungU"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item mx-5">
-                                <a class="nav-link fw-bold" aria-current="page" href="/home">Home</a>
+                                <a class="nav-link fw-bold" aria-current="page" href="/index">Home</a>
                             </li>
                             <li class="nav-item mx-5">
                                 <a class="nav-link fw-bold" aria-current="page" href="/about">About Us</a>
                             </li>
-                            <li class="nav-item mx-5">
-                                <a class="nav-link fw-bold" href="/contact">Contact Us</a>
-                            </li>
                         </ul>
                         <div>
-                            <a href="/home/sign-in" type="button" class="btn rounded-3 mx-3 fw-semibold" style="background-color: white;font-size:16px;height:35px" >Sign In</a>
-                            <a href="{{route('create.user')}}" type="button" class="btn rounded-3 mx-4 fw-semibold text-white" style="background-color: #4A2C2A;font-size:16px;height:35px">Sign Up</a>
+                            <a href="/home/login/create" type="button" class="btn rounded-3 mx-3 fw-semibold" style="background-color: white;font-size:16px;height:35px" >Sign In</a>
+                            <a href="/home/create" type="button" class="btn rounded-3 mx-4 fw-semibold text-white" style="background-color: #4A2C2A;font-size:16px;height:35px">Sign Up</a>
                         </div>
                         
-                        <div>
-                            <img class="style-scope mx-3" src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}" height="40" width="40" alt="">
-                        </div>
+                       
                         
                     </div>
                 </div>

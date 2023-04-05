@@ -24,10 +24,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('', [
-            'title' => 'Tambah Produk',
+        return view('coffee.main.registerCoffee', [
+            'title' => 'Register',
             'method' => 'POST',
-            'action' => 'home',
+            'action' => 'home/my_products',
         ]);
     }
 
@@ -49,7 +49,7 @@ class ProductController extends Controller
         $prod->reason = $request->reason;
         $prod->id_toko = $request->id_toko;
         $prod->save();
-        return redirect('\home')->with('msg', 'sukses');
+        return redirect('/home/main/home')->with('msg', 'sukses');
     }
 
     /**
