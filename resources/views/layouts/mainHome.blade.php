@@ -15,6 +15,40 @@
                 background: url('{{asset('coffeeAroundU/assets/halaman_awal/register.png')}}');
                 
             }
+            /* Float four columns side by side */
+            .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+            }
+
+            
+
+            /* Clear floats after the columns */
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            
+            }
+
+            /* Responsive columns */
+            @media screen and (max-width: 600px) {
+                .column {
+                    width: 100%;
+                    display: block;
+                    margin-bottom: 20px;
+                }
+            }
+
+            /* Style the counter cards */
+            .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            
+            margin-bottom: 2rem;
+            background-color: #ffffff;
+            }
         </style>
     </head>
     <body>
@@ -22,33 +56,34 @@
             <nav class="nav-atas">
                 <img src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" class="logo">
                 <ul>
-                    <li><a href="/home" class="fw-semibold">Home</a></li>
-                    <li><a href="/home/main/about" class="fw-semibold">About Us</a></li>
+                    <li><a href="/my_products" class="fw-semibold">Home</a></li>
+                    <li><a href="/about" class="fw-semibold">About Us</a></li>
                     <li><a href="/home/main/menu-in-area" class="fw-semibold">Menu in Area</a></li>
                     <li><a href="/home/main/my-menu" class="fw-semibold">Show My Menu</a></li>
                 </ul>
                 <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}" class="user-pic" onclick="toggleMenu()">
+                
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                    <a href="#" class="sub-menu-link">
-                        
+                    <a href="" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
-                        <p class="fw-semibold text-dark">Muhammad Goblin</p>
+                        <p class="fw-semibold text-dark">Nama User </p>
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>
-                    <a href="#" class="sub-menu-link">
+                    <a href="" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
-                        <p class="fw-semibold text-dark">Your Cafe</p>
+                        <p class="fw-semibold text-dark">Nama Cafe</p>
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>
-                    <a href="#" class="sub-menu-link">
+                    <a href="/index" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
                         <p class="fw-semibold text-dark">Logout</p>
                         <span></span>
                     </a>
                     </div>
+                    
                 </div>
             </nav>
         <script>

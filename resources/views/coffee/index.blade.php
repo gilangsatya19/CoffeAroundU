@@ -17,7 +17,7 @@
                 
                     <div class="text-center">
                         <p class="text-white fw-semibold">Join the Coffee World <br></p>
-                        <a href="/home/login" class="btn btn-primary bg-light border-dark text-black fw-semibold px-5">Register Your Cafe</a>
+                        <a href="/login/create" class="btn btn-primary bg-light border-dark text-black fw-semibold px-5">Register Your Cafe</a>
                     </div>
                 
             </div>

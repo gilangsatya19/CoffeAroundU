@@ -25,7 +25,7 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control border-black rounded-0" placeholder="Enter Password" name="password" required>
                             </div>
-                            <p class="mb-5 text-end fw-semibold">Forgot your password? <a href="" style="color: black">Click here</a></p>
+                            <p class="mb-5 text-end fw-semibold">Forgot your password? <a href="/login/show" style="color: black">Click here</a></p>
                             <div>
                                 <button class="btn btn-primary fw-semibold px-4" style="background-color: #4A2C2A" type="submit">Login</button>
                             </div>

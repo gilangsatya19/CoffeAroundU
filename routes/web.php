@@ -4,6 +4,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TokoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ForgotpasswordController;
+use App\Http\Controllers\NewpasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +30,10 @@ Route::get('/about', function () {
 // Route::get('/home/sign-up', [UserController::class, 'create'])->name('create.user');
 // Route::post('/home/store', [UserController::class, 'store'])->name('store.user');
 // Route::get('/home/main/home', [UserController::class, 'index'])->name('home.user');
+
+Route::resource('/new_password', NewpasswordController::class);
+
+Route::resource('/forgot_password', ForgotpasswordController::class);
 
 Route::resource('/login', LoginController::class);
 

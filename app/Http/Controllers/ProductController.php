@@ -44,7 +44,7 @@ class ProductController extends Controller
         $prod->harga = $request->harga;
         $prod->rating = 0;
         $prod->foto = $request->foto;   
-        $prod->available = 1;
+        $prod->available = $request->available;
         $prod->reason = '';
         $prod->id_toko = session('toko_id');
         $prod->save();
@@ -68,10 +68,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('', [
-            'title' => 'Edit Produk',
+        return view('coffee.main.addCoffee', [
+            'title' => 'Edit ',
             'method' => 'PUT',
-            'action' => 'home/'.$id,
+            'action' => 'my_products/'.$id,
             'data' => Product::find($id),
         ]);
     }
@@ -89,13 +89,13 @@ class ProductController extends Controller
         $prod->deskripsi_produk = $request->deskripsi_produk;
         $prod->has_customization = $request->has_customization;
         $prod->harga = $request->harga;
-        $prod->rating = $request->rating;
+        $prod->rating = 0;
         $prod->foto = $request->foto;
         $prod->available = $request->available;
-        $prod->reason = $request->reason;
-        $prod->id_toko = $request->id_toko;
+        $prod->reason = '';
+        $prod->id_toko = session('toko_id');
         $prod->save();
-        return redirect('\home')->with('msg', 'sukses');
+        return redirect('/my_products')->with('msg', 'sukses');
     }
 
     /**
@@ -106,6 +106,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::destroy($id);
-        return redirect('\home')->with('msg', 'sukses');
+        return redirect('/my_products')->with('msg', 'sukses');
     }
 }
