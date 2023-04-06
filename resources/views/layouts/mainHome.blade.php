@@ -44,10 +44,14 @@
             /* Style the counter cards */
             .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 16px;
+            
             
             margin-bottom: 2rem;
             background-color: #ffffff;
+            }
+
+            .card:hover{
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             }
         </style>
     </head>
@@ -58,8 +62,7 @@
                 <ul>
                     <li><a href="/my_products" class="fw-semibold">Home</a></li>
                     <li><a href="/about" class="fw-semibold">About Us</a></li>
-                    <li><a href="/home/main/menu-in-area" class="fw-semibold">Menu in Area</a></li>
-                    <li><a href="/home/main/my-menu" class="fw-semibold">Show My Menu</a></li>
+                    
                 </ul>
                 <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}" class="user-pic" onclick="toggleMenu()">
                 

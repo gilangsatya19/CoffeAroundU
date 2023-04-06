@@ -60,8 +60,8 @@ Route::get('home/main/add-coffee', function() {
     return view('coffee.main.registerCoffee');
 });
 
-Route::get('edit-profile', function() {
-    return view('coffee.main.editProfile');
+Route::get('detail', function() {
+    return view('coffee.detail');
 });
 
 

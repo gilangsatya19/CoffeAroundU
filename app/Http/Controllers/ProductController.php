@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Toko;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -64,7 +65,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return Product::find($id);
+        return view('coffee.main.detailCoffee',[
+            'data' => Product::find($id), 
+            'toko' => Toko::find(session('toko_id')),
+        ]);
     }
 
     /**

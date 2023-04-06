@@ -36,24 +36,25 @@
         <div class="row">
                 @foreach ($data as $item)
                 <div class="column">
-                    <div class="card">
-                        <div class="d-flex justify-content-center mb-4">
-                            <img src="public/Image/{{$item->foto}}" class="logo">
+                        <a href="/my_products/{{$item->id}}" class="link-offset-2 link-underline link-underline-opacity-0 text-black">
+                        <div class="card">
+                            <div class="d-flex  mb-4" style="">
+                                <img src="public/Image/{{$item->foto}}" class="logo rounded-top" style="width: 100%;height: 20vh;">
+                            </div>
+                            <p class="fs-5 fw-semibold mx-2">{{$item->nama}}</p>
+                            <p class="fs-6 fw-semibold mx-2">RP. {{$item->harga}}</p>
+                            <div class="mx-2">
+                                <a href="/my_products/{{$item->id}}/edit" value="tambah" class="btn btn-primary border-0 my-3 fw-semibold" style="width: 5rem;background-color: #4f73c0">Edit</a>
+                                <form method="POST" action="/my_products/{{$item->id}}" onsubmit="return confirm('Yakin hapus?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button value="Hapus" class="btn btn-light text-white fw-semibold" style="width: 5rem;background-color: rgb(160, 17, 46)">Delete</button>
+                                </form>
+                            </div>
                         </div>
-                        <p class="fs-5 fw-semibold">{{$item->nama}}</p>
-                        <p class="fs-6 fw-semibold">RP. {{$item->harga}}</p>
-                        <div>
-                            <a href="/my_products/{{$item->id}}/edit" value="tambah" class="btn btn-primary border-0 my-3 fw-semibold" style="width: 5rem;background-color: #4f73c0">Edit</a>
-                            <form method="POST" action="/my_products/{{$item->id}}" onsubmit="return confirm('Yakin hapus?')">
-                                @csrf
-                                @method('DELETE')
-                                <button value="Hapus" class="btn btn-light text-white fw-semibold" style="width: 5rem;background-color: rgb(160, 17, 46)">Delete</button>
-                            </form>
-                        </div>
-                        
-                        
-                    </div>
+                    </a>
                 </div>
+                
                 
                 @endforeach
             </div>
