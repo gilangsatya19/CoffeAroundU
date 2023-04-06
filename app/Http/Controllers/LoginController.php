@@ -25,9 +25,11 @@ class LoginController extends Controller
                 foreach(Toko::get() as $t) {
                     if($t->id_user == $u->id) {
                         session(['toko_id' => $t->id]);
+                        session(['toko_nama' => $t->nama]);
                     }
                 }
                 session(['user_id' => $u->id]);
+                session(['user_nama' => $u->name]);
                 return redirect('my_products');
             }
         }

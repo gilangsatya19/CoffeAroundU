@@ -38,7 +38,7 @@
                 <div class="column">
                     <div class="card">
                         <div class="d-flex justify-content-center mb-4">
-                            <img src="{{$item->foto}}" class="logo">
+                            <img src="public/Image/{{$item->foto}}" class="logo">
                         </div>
                         <p class="fs-5 fw-semibold">{{$item->nama}}</p>
                         <p class="fs-6 fw-semibold">RP. {{$item->harga}}</p>

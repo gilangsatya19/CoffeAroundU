@@ -67,17 +67,17 @@
                     <div class="sub-menu">
                     <a href="" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
-                        <p class="fw-semibold text-dark">Nama User </p>
+                        <p class="fw-semibold text-dark">{{session('user_nama')}} </p>
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>
                     <a href="" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
-                        <p class="fw-semibold text-dark">Nama Cafe</p>
+                        <p class="fw-semibold text-dark">{{session('toko_nama')}}</p>
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>
-                    <a href="/index" class="sub-menu-link">
+                    <a href="/" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
                         <p class="fw-semibold text-dark">Logout</p>
                         <span></span>
