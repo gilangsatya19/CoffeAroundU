@@ -21,16 +21,22 @@ class LoginController extends Controller
     public function store(Request $request)
     {   
         foreach (User::get() as $u) {
+            $found = false;
             if($request->email == $u->email && $request->password == $u->password) {
                 foreach(Toko::get() as $t) {
                     if($t->id_user == $u->id) {
                         session(['toko_id' => $t->id]);
                         session(['toko_nama' => $t->nama]);
+                        $found = true;
                     }
                 }
                 session(['user_id' => $u->id]);
                 session(['user_nama' => $u->name]);
-                return redirect('my_products');
+                if($found) {
+                    return redirect('my_products');
+                } else {
+                    return redirect('/my_toko/create');
+                }
             }
         }
     }
