@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.mainHome')
  
 @section('title', 'Register Coffee')
  

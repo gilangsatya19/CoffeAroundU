@@ -7,6 +7,7 @@
             integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
         
         <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
+        <link rel="icon" href="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}" type="image/icon type">
         <style>
             .banner{
                 height: 50vh;
@@ -58,7 +59,7 @@
     <body>
         @section('navbar')
             <nav class="nav-atas">
-                <img src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" class="logo">
+                <img src="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}" width="80px" height="80px" class="logo">
                 <ul>
                     <li><a href="/my_products" class="fw-semibold">Home</a></li>
                     <li><a href="/about" class="fw-semibold">About Us</a></li>
@@ -123,7 +124,7 @@
                                 </li>
                             </ul>
                             <div>
-                                <img class="mx-5" src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" style="object-position: bot right;" width="150px" height="150px" alt="">
+                                <img class="mx-5" src="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}" style="object-position: bot right;" width="150px" height="150px" alt="">
                             </div>
                             
                             

@@ -3,6 +3,7 @@
         <title>Coffee Around U | @yield('title')</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" 
             integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link rel="icon" href="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}" type="image/icon type">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
         <style>
@@ -20,7 +21,7 @@
         @section('navbar')
             <nav class="navbar navbar-expand-lg bg-white ">
                 <div class="container-fluid">
-                    <a class="navbar-brand mx-4" href="/index"><img src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" width="90px" height="90px" alt="logo-coffeAroungU"></a>
+                    <a class="navbar-brand mx-4" href="/index"><img src="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}" width="80px" height="80px" alt="logo-coffeAroungU"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -71,7 +72,7 @@
                                 </li>
                             </ul>
                             <div>
-                                <img class="mx-5" src="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png" style="object-position: bot right;" width="150px" height="150px" alt="">
+                                <img class="mx-5" src="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}" style="object-position: bot right;" width="150px" height="150px" alt="">
                             </div>
                             
                             
