@@ -11,7 +11,7 @@
 @section('content')
     <form action="/{{$action}}" method="POST">
         @csrf
-        <div class="container-fluid ">
+        <div class="container-fluid" style="margin-bottom: 54px">
             <div class="container d-flex justify-content-center my-5">
                 <div class="my-3">
                     <p class="fw-bold mb-5 text-center" style="font-size: 50px">Sign In</p>
