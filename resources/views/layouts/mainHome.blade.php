@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Coffee Around U | @yield('title')</title>
+        <title>Coffee Around U @yield('title')</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" 
             integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" 
@@ -61,27 +61,27 @@
             <nav class="nav-atas">
                 <img src="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}" width="80px" height="80px" class="logo">
                 <ul>
-                    <li><a href="/my_products" class="fw-semibold">Home</a></li>
-                    <li><a href="/about" class="fw-semibold">About Us</a></li>
+                    <li><a href="/home" class="fw-semibold">Home</a></li>
+                    
                     
                 </ul>
                 <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}" class="user-pic" onclick="toggleMenu()">
                 
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                    <a href="" class="sub-menu-link">
+                    <a href="/home/{{auth()->user()->id}}/edit" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
-                        <p class="fw-semibold text-dark">{{session('user_nama')}} </p>
+                        <p class="fw-semibold text-dark">{{auth()->user()->name}} </p>
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>
                     <a href="" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
-                        <p class="fw-semibold text-dark">{{session('toko_nama')}}</p>
+                        <p class="fw-semibold text-dark"></p>
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>
-                    <a href="/" class="sub-menu-link">
+                    <a href="/logout" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
                         <p class="fw-semibold text-dark">Logout</p>
                         <span></span>

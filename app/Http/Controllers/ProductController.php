@@ -12,12 +12,12 @@ class ProductController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index()
-    {
-        return view('coffee.main.home', [
-            'data' => Product::where('id_toko', session("toko_id"))->get(),
-        ]);
-    }
+    // public function index()
+    // {
+    //     return view('coffee.main.home', [
+    //         'data' => Product::where('id_toko', session("toko_id"))->get(),
+    //     ]);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -53,9 +53,9 @@ class ProductController extends Controller
         }
         $prod->available = $request->available;
         $prod->reason = '';
-        $prod->id_toko = session('toko_id');
+        $prod->id_toko = auth()->toko()->id;
         $prod->save();
-        return redirect('/my_products')->with('msg', 'sukses');
+        return redirect('/home')->with('msg', 'sukses');
     }
 
     /**
@@ -111,7 +111,7 @@ class ProductController extends Controller
         $prod->reason = '';
         $prod->id_toko = session('toko_id');
         $prod->save();
-        return redirect('/my_products')->with('msg', 'sukses');
+        return redirect('/home')->with('msg', 'sukses');
     }
 
     /**
@@ -122,6 +122,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::destroy($id);
-        return redirect('/my_products')->with('msg', 'sukses');
+        return redirect('/home')->with('msg', 'sukses');
     }
 }

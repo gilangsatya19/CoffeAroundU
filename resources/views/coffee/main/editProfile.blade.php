@@ -1,6 +1,6 @@
 @extends('layouts.mainHome')
  
-@section('title', 'Register Cafe')
+@section('title', '')
  
 @section('navbar')
     @parent
@@ -19,20 +19,21 @@
                             <div >
                                 <div class="mt-5 mb-3 mx-5">
                                     <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control border-black rounded-0"  placeholder="nama" name="name" required>
+                                    <input type="text" class="form-control border-black rounded-0"  value="{{isset($data)?$data->name:''}}" name="name" required>
                                 </div>
                                 <div class="mb-3 mx-5">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control border-black rounded-0" placeholder="email" name="email" required>
+                                    <input type="email" class="form-control border-black rounded-0" value="{{isset($data)?$data->email:''}}" name="email" required>
                                 </div>
                                 <div class="mb-3 mx-5">
                                     <label for="phone_number" class="form-label">Phone Number</label>
-                                    <input type="number" class="form-control border-black rounded-0"  placeholder="ex: 08......" name="phone_number" required>
+                                    <input type="number" class="form-control border-black rounded-0"  value="{{isset($data)?$data->phone_number:''}}" name="phone_number" required>
                                 </div>
                                 <div class="mb-3 mx-5">
                                     <label for="address" class="form-label">Address</label>
-                                    <input type="text" class="form-control border-black rounded-0" placeholder="address" name="address" required>
+                                    <input type="text" class="form-control border-black rounded-0" value="{{isset($data)?$data->address:''}}" name="address" required>
                                 </div>
+                                
                                 
                                 <div class="mx-5 my-5">
                                     <div>

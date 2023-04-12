@@ -1,6 +1,6 @@
 @extends('layouts.mainHome')
  
-@section('title', 'Home')
+@section('title', '')
  
 @section('navbar')
     @parent

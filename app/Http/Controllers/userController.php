@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Product;
+use App\Models\Toko;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
@@ -14,8 +17,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data["users"] = User::get();
-        return view('coffee.main.home', $data);
+        
+        return view('coffee.main.home', [
+            'data' => Product::where('id_toko', session("toko_id"))->get(),
+            
+        ]);
     }
 
     /**
@@ -38,17 +44,28 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->phone_number = $request->phone_number;
-        $user->address = $request->phone_number;
-        $user->role = $request->role;
-        // $user->idToko = NULL;
-        $user->save();
-        session(['user_id' => $user->id]);
-        return redirect('/my_toko/create')->with('msg', 'sukses');
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email:dns|unique:users',
+            'password' => 'required|min:8',
+            'phone_number' => 'required|unique:users',
+            'address' => 'required',
+            'role' => 'required',
+        ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        User::create($validatedData);
+        // $user = new User;
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->password = $request->password;
+        // $user->phone_number = $request->phone_number;
+        // $user->address = $request->address;
+        // $user->role = $request->role;
+        // // $user->idToko = NULL;
+        // $user->save();
+        // session(['user_id' => $user->id]);
+        return redirect('/my_toko/create')->with('success', 'Registrasi sukses!');
     }
 
     /**
@@ -72,7 +89,7 @@ class UserController extends Controller
         return view('coffee.main.editProfile', [
             'title' => 'Edit Profile',
             'method' => 'PUT',
-            'action' => 'home/edit/'.$id,
+            'action' => 'home/'.$id,
             'data' => User::find($id),
         ]);
     }

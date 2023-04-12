@@ -1,6 +1,6 @@
 @extends('layouts.mainHome')
  
-@section('title', 'Home')
+@section('title', '')
  
 @section('navbar')
     @parent
@@ -22,6 +22,7 @@
         <div class="d-flex">
                 <div>
                     <p class="fw-bold fs-2 text-black my-3 text-center">Start Your Coffee Journey</p>
+                    
                     <div class="d-flex">
                         <p class="fw-semibold fs-4">Your Coffee</p>
                     </div>
@@ -43,14 +44,8 @@
                             </div>
                             <p class="fs-5 fw-semibold mx-2">{{$item->nama}}</p>
                             <p class="fs-6 fw-semibold mx-2">RP. {{$item->harga}}</p>
-                            <div class="mx-2">
-                                <a href="/my_products/{{$item->id}}/edit" value="tambah" class="btn btn-primary border-0 my-3 fw-semibold" style="width: 5rem;background-color: #4f73c0">Edit</a>
-                                <form method="POST" action="/my_products/{{$item->id}}" onsubmit="return confirm('Yakin hapus?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button value="Hapus" class="btn btn-light text-white fw-semibold" style="width: 5rem;background-color: rgb(160, 17, 46)">Delete</button>
-                                </form>
-                            </div>
+                            <p class="fs-6 fw-semibold mx-2">{{$item->deskripsi_produk}}</p>
+                            
                         </div>
                     </a>
                 </div>

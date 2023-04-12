@@ -13,9 +13,11 @@ class TokoController extends Controller
      */
     public function index()
     {
+        
         return view('', [
             'data' => Toko::get(),
         ]);
+        
     }
 
     /**
@@ -43,10 +45,10 @@ class TokoController extends Controller
         $toko->nama = $request->nama;
         $toko->map = $request->map;
         $toko->icon_url = $request->icon_url;
-        $toko->id_user = session('user_id');
+        $toko->id_user = auth()->user()->id;
         $toko->save();
-        session(['toko_id' => $toko->id]);
-        return redirect('/my_products')->with('msg', 'sukses');
+        // session(['toko_id' => $toko->id]);
+        return redirect('/home')->with('msg', 'sukses');
     }
 
     /**
@@ -90,7 +92,7 @@ class TokoController extends Controller
         $toko->icon_url = $request->icon_url;
         $toko->id_user = session('user_id');
         $toko->save();
-        return redirect('/my_products')->with('msg', 'sukses');
+        return redirect('/home')->with('msg', 'sukses');
     }
 
     /**

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Coffee Around U | @yield('title')</title>
+        <title>Coffee Around U @yield('title')</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" 
             integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
         <link rel="icon" href="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}" type="image/icon type">
@@ -35,7 +35,7 @@
                             </li>
                         </ul>
                         <div>
-                            <a href="/login/create" type="button" class="btn rounded-3 mx-3 fw-semibold" style="background-color: white;font-size:16px;height:35px" >Sign In</a>
+                            <a href="/login" type="button" class="btn rounded-3 mx-3 fw-semibold" style="background-color: white;font-size:16px;height:35px" >Sign In</a>
                             <a href="/home/create" type="button" class="btn rounded-3 mx-4 fw-semibold text-white" style="background-color: #4A2C2A;font-size:16px;height:35px">Sign Up</a>
                         </div>
                         

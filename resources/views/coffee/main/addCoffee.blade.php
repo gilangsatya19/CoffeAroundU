@@ -1,6 +1,6 @@
 @extends('layouts.mainHome')
  
-@section('title', 'Register Coffee')
+@section('title', '')
  
 @section('navbar')
     @parent
@@ -48,10 +48,7 @@
                                     <label for="unavailable">Unavailable</label>
                                 </div>
                                 
-                                {{-- <div class="mb-3 mx-5 form-check">
-                                    <input type="checkbox" class="form-check-input border-1 border-black" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">I agree with the terms and condition and Privacy Statement of Coffee Around-U</label>
-                                </div> --}}
+                                
                                 <div class="mx-5 my-5">
                                     <div>
                                         <button class="btn btn-primary text-white fw-semibold me-5" style="background-color: #4A2C2A">Submit</button>

@@ -1,6 +1,6 @@
 @extends('layouts.main')
  
-@section('title', 'Forgot Password')
+@section('title', '| Forgot Password')
  
 @section('navbar')
     @parent
