@@ -9,7 +9,7 @@
 @endsection
  
 @section('content')
-    <form action="/{{$action}}" method="POST">
+    <form action="/login" method="POST">
         @csrf
         <div class="container-fluid ">
             <div class="container d-flex justify-content-center my-5">
