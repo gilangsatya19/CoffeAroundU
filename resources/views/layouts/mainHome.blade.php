@@ -66,7 +66,7 @@
                     
                 </ul>
                 <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}" class="user-pic" onclick="toggleMenu()">
-                
+                @auth
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
                     <a href="/home/{{auth()->user()->id}}/edit" class="sub-menu-link">
@@ -81,14 +81,21 @@
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>
-                    <a href="/logout" class="sub-menu-link">
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="sub-menu-link ms-auto btn-primary bg-dark text-white border-0 fw-semibold">Logout</button>
+                        
+
+                    </form>
+                    {{-- <a href="/logout" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
                         <p class="fw-semibold text-dark">Logout</p>
                         <span></span>
-                    </a>
+                    </a> --}}
                     </div>
                     
                 </div>
+                @endauth
             </nav>
         <script>
             let subMenu = document.getElementById("subMenu");

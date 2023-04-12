@@ -17,7 +17,7 @@
                 
                     <div class="text-center">
                         <p class="text-white fw-semibold">Join the Coffee World <br></p>
-                        <a href="/login/create" class="btn btn-primary bg-light border-dark text-black fw-semibold px-5">Register Your Cafe</a>
+                        <a href="/login" class="btn btn-primary bg-light border-dark text-black fw-semibold px-5">Register Your Cafe</a>
                     </div>
                 
             </div>
@@ -29,8 +29,8 @@
     <div class="container">
         <p class="fw-bold text-dark fs-2 "style="padding-top:25px">Welcome To Coffee Around-U</p>
         <p class="text-justify "></p>
-            <div class="row justify-content-center" style="padding-bottom:25px;">
-                <div class="col-sm-6">
+            <div class="row" style="padding-bottom:25px;">
+                <div class="col-lg-12">
                   <div class="card" style="border-color:#4A2C2A">
                     <div class="card-body">
                       <h5 class="card-title">Start Your Online Cafe Now</h5>

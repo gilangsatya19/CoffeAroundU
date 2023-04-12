@@ -65,7 +65,7 @@ class UserController extends Controller
         // // $user->idToko = NULL;
         // $user->save();
         // session(['user_id' => $user->id]);
-        return redirect('/my_toko/create')->with('success', 'Registrasi sukses!');
+        return redirect('/login')->with('success', 'Registrasi sukses!');
     }
 
     /**
