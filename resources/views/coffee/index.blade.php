@@ -27,6 +27,12 @@
     
 
     <div class="container">
+        @auth
+          <h1>udh login</h1>    
+        @endauth
+        @guest
+          <h1>blm login</h1>
+        @endguest
         <p class="fw-bold text-dark fs-2 "style="padding-top:25px">Welcome To Coffee Around-U</p>
         <p class="text-justify "></p>
             <div class="row" style="padding-bottom:25px;">

@@ -1,4 +1,4 @@
-@extends('layouts.mainHome')
+@extends('layouts.main')
  
 @section('title', '')
  
@@ -12,7 +12,8 @@
     <div class="banner" style="height: 100%;width:100%;background: url('{{asset('coffeeAroundU/assets/register/banner_register_cafe.png')}}')">
         <div class="container col-lg-10 d-flex justify-content-center" style="height:100%;width:70%">
             
-                <form action="/" method="POST">
+                <form action="{{$action}}" method="PUT">
+                    @csrf
                     <div class="">
                         <p class="text-black fw-bold mt-5 fs-1" style="">Edit Profile <br></p>
                         <div class="border border-2 border-black bg-white" style="height: 65%;width:50rem"> 
@@ -38,7 +39,6 @@
                                 <div class="mx-5 my-5">
                                     <div>
                                         <button type="submit" class="btn btn-primary text-white fw-semibold me-5" style="background-color: #4A2C2A">Save Changes</button>
-                                        <button type="reset" class="btn btn-ligth border-1 border-black">Reset</button>
                                     </div>
                                 </div>
                                 

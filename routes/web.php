@@ -36,12 +36,13 @@ Route::resource('/new_password', NewpasswordController::class);
 Route::resource('/forgot_password', ForgotpasswordController::class);
 
 // Route::resource('/login', LoginController::class);
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::resource('/home', UserController::class);
+
 
 Route::resource('/my_toko', TokoController::class);
 

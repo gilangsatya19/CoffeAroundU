@@ -53,7 +53,7 @@ class ProductController extends Controller
         }
         $prod->available = $request->available;
         $prod->reason = '';
-        $prod->id_toko = auth()->toko()->id;
+        $prod->id_toko = session('toko_id'); //??????
         $prod->save();
         return redirect('/home')->with('msg', 'sukses');
     }
