@@ -40,7 +40,7 @@
                         <a href="/my_products/{{$item->id}}" class="link-offset-2 link-underline link-underline-opacity-0 text-black">
                         <div class="card">
                             <div class="d-flex  mb-4" style="">
-                                <img src="public/Image/{{$item->foto}}" class="logo rounded-top" style="width: 100%;height: 20vh;">
+                                <img src="public/Image/{{$item->foto}}" class="logo rounded-top" style="width: 100%;height: 20vh; object-fit: cover; object-position: center;">
                             </div>
                             <p class="fs-5 fw-semibold mx-2">{{$item->nama}}</p>
                             <p class="fs-6 fw-semibold mx-2">RP. {{$item->harga}}</p>

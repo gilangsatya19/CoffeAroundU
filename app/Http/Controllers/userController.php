@@ -85,11 +85,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
         return view('coffee.main.editProfile', [
             'title' => 'Edit Profile',
             'method' => 'PUT',
-            'action' => 'home/'.$id,
+            'action' => '/home/'.$id,
             'data' => User::find($id),
         ]);
     }

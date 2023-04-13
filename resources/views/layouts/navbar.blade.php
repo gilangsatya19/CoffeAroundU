@@ -16,9 +16,9 @@
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>
-                    <a href="/my_toko/id_toko/edit" class="sub-menu-link">
+                    <a href="/my_toko/{{session('toko_id')}}/edit" class="sub-menu-link">
                         <img src="{{asset('coffeeAroundU/assets/navbar/icon_account.png')}}">
-                        <p class="fw-semibold text-dark"></p>
+                        <p class="fw-semibold text-dark">{{session('toko_nama')}}</p>
                         <span class="text-decoration-underline ">Edit</span>
                     </a>
                     <hr>

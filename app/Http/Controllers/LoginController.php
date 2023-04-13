@@ -25,10 +25,21 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            
-            return redirect()->intended('/my_toko/create');
+            $tokos = Toko::get();
+            $has_toko = false;
+            foreach($tokos as $t) {
+                if ($t->id_user == auth()->user()->id) {
+                    $has_toko = true;
+                    session(['toko_id' => $t->id]);
+                    session(['toko_nama' => $t->nama]);
+                }
+            }
+            if($has_toko) {
+                return redirect('/home');
+            } else {
+                return redirect('/my_toko/create');
+            }
         }
-
         return back()->with('loginError', 'Login Failed!');
     }
 

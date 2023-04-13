@@ -12,13 +12,14 @@
     <div class="banner" style="height: 100%;width:100%;background: url('{{asset('coffeeAroundU/assets/register/banner_register_cafe.png')}}')">
         <div class="container col-lg-10 d-flex justify-content-center" style="height:100%;width:70%">
             
-                <form action="{{$action}}" method="PUT">
+                <form action="{{$action}}" method="POST">
                     @csrf
                     <div class="">
                         <p class="text-black fw-bold mt-5 fs-1" style="">Edit Profile <br></p>
                         <div class="border border-2 border-black bg-white" style="height: 65%;width:50rem"> 
                             <div >
                                 <div class="mt-5 mb-3 mx-5">
+                                    <input type="hidden" name="_method" value="{{ $method }}" />
                                     <label for="name" class="form-label">Name</label>
                                     <input type="text" class="form-control border-black rounded-0"  value="{{isset($data)?$data->name:''}}" name="name" required>
                                 </div>

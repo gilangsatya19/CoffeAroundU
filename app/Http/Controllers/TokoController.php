@@ -44,10 +44,16 @@ class TokoController extends Controller
         $toko = new Toko;
         $toko->nama = $request->nama;
         $toko->map = $request->map;
-        $toko->icon_url = $request->icon_url;
+        if($request->file('icon_url')) {
+            $file = $request->file('icon_url');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('public/Image'), $filename);
+            $toko->icon_url = $filename;
+        }
         $toko->id_user = auth()->user()->id;
         $toko->save();
-        // session(['toko_id' => $toko->id]);
+        session(['toko_id' => $toko->id]);
+        session(['toko_nama' => $toko->nama]);
         return redirect('/home')->with('msg', 'sukses');
     }
 
@@ -89,7 +95,12 @@ class TokoController extends Controller
         $toko = Toko::find($id);
         $toko->nama = $request->nama;
         $toko->map = $request->map;
-        $toko->icon_url = $request->icon_url;
+        if($request->file('icon_url')) {
+            $file = $request->file('icon_url');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('public/Image'), $filename);
+            $toko->icon_url = $filename;
+        }
         $toko->id_user = session('user_id');
         $toko->save();
         return redirect('/home')->with('msg', 'sukses');
