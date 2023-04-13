@@ -12,7 +12,7 @@
             height: 50vh;
             background-size: cover;
             background-position: center;
-            background: url('https://wallpapercrafter.com/th800/247546-coffee-cafe-table-and-coffee-cup-hd.jpg');
+            background: url('{{asset('coffeeAroundU/assets/halaman_awal/banner.jpg')}}');
             
         }
         /* Float four columns side by side */
