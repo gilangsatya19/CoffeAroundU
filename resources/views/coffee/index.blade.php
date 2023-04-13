@@ -12,7 +12,7 @@
     
     
     <div class="container">
-        <div class="container-fluid banner">
+        <div class="container-fluid banner" style="background: url('{{asset('coffeeAroundU/assets/halaman_awal/register.png')}}')">
             <div class="fs-1 container col-lg-10 d-flex justify-content-end" style="height:100%;align-items:center">
                 
                     <div class="text-center">
