@@ -9,11 +9,19 @@
 @endsection
  
 @section('content')
+    
     <form action="/login" method="POST">
         @csrf
         <div class="container-fluid ">
             <div class="container d-flex justify-content-center my-5">
                 <div class="my-3">
+                    @if (session()->has('loginError'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{session('loginError')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        
+                    @endif
                     <p class="fw-bold mb-5 text-center" style="font-size: 50px">Sign In</p>
                     <div class="mb-5 border border-2 border-black" style="height:24rem;width:60rem;align-items:center">
                         <div class="mx-5 my-5 ">

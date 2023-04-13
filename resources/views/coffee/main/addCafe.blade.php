@@ -9,19 +9,19 @@
 @endsection
  
 @section('content')
-    <div class="banner" style="height: 100%;width:100%; background-size: cover; background: url('{{asset('coffeeAroundU/assets/register/banner_register_cafe.png')}}';)">
+    <div class="banner" style="height: 100%;width:100%; background-size: cover;">
         <div class="container col-lg-10 d-flex justify-content-center" style="height:100%;width:70%">
             
-                <form action="/{{$action}}" method="{{$method}}" enctype="multipart/form-data">
+                <form action="/{{$action}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="">
-                        <p class="text-black fw-bold mt-5 fs-1" style="">Register Cafe <br></p>
+                        <p class="text-black fw-bold mt-5 fs-1" style="">{{$title}} Cafe <br></p>
                         <div class="border border-2 border-black bg-white" style="height: 85%;width:50rem"> 
                             <div >
                                 <div class="border border-1 border-black d-flex mt-5 mx-5" style="width: 70%">
                                     <div>
                                         <img class="mx-4" src="{{isset($data->icon_url)?'../../public/Image/'.$data->icon_url:asset('coffeeAroundU/assets/register/img_cafe.png')}}" width="250px" height="250px" alt="">
-
+                                        <input type="hidden" name="_method" value="{{ $method }}" />
                                         <div class="mb-3 mx-5">
                                             <label class="form-label" for="">Upload Gambar</label>
                                             <input type="file" class="form-control" {{(isset($data->icon_url)?'':'required')}} name="icon_url" />

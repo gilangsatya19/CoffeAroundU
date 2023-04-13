@@ -9,7 +9,7 @@
 @endsection
  
 @section('content')
-    <div class="banner" style="height: 60rem;width:100%;background: url('{{asset('coffeeAroundU/assets/register/banner_register_cafe.png')}}')">
+    <div class="banner" style="height: 100%;width:100%; background-size: cover;">
         <div class="container col-lg-10 d-flex justify-content-center" style="height:100%;width:70%">
             
                 <form action="/{{$action}}" method="POST" enctype="multipart/form-data">

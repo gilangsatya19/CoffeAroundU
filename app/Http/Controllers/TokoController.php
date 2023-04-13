@@ -101,8 +101,9 @@ class TokoController extends Controller
             $file->move(public_path('public/Image'), $filename);
             $toko->icon_url = $filename;
         }
-        $toko->id_user = session('user_id');
+        $toko->id_user = auth()->user()->id;
         $toko->save();
+        session(['toko_nama' => $toko->nama]);
         return redirect('/home')->with('msg', 'sukses');
     }
 
