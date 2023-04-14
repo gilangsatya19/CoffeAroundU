@@ -11,9 +11,12 @@
 @section('content')
 
 {{-- <div class="container"> --}}
-<div>
-    <div
-        style="width:100%; height:60vh; background: url('{{'../../public/Image/'.$toko->icon_url}}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<div class="d-flex justify-content-center">
+    {{-- <div
+        style=" background: url('{{'../../public/Image/'.$toko->icon_url}}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    </div> --}}
+    <div>
+        <img class="" src="{{asset('public/Image/'.$toko->icon_url)}}" alt="" width="500px" height="400px" style="margin-bottom: 6rem;margin-top:2rem;background-size:cover">
     </div>
 </div>
 <div class="container">
