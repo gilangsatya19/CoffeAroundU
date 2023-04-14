@@ -49,8 +49,8 @@ class TransactionController extends Controller
     public function show($id)
     {
         return view('coffee.main.orderDetails',[
-            // 'data' => Product::find($id), 
-            // 'toko' => Toko::find(session('toko_id')),
+
+            'data' => Transaction::get(),
         ]);
     }
 

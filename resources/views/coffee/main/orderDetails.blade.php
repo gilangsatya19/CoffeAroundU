@@ -20,7 +20,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body ">
-                <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+                {{-- <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div> --}}
                 <div class="px-4 py-5">
                     <h5 class="text-uppercase">Sales Details</h5>
                 <h4 class="mt-5 theme-color mb-5">Jonathan Alder</h4>
@@ -42,7 +42,7 @@
                 <br>
                 <div class="d-flex justify-content-between">
                     <span class="font-weight-bold">Americano</span>
-                    <span class="text-muted">Rp 15000</span>
+                    <span class="text-muted">Rp 20000</span>
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -52,10 +52,10 @@
                 
                 <div class="d-flex justify-content-between mt-3">
                     <span class="font-weight-bold">Total</span>
-                    <span class="font-weight-bold theme-color">Rp 65000</span>
+                    <span class="font-weight-bold theme-color">Rp 70000</span>
                 </div>  
                 <div class="text-center mt-5">
-                    <button class="btn btn-primary">Ok</button>     
+                    <a href="/transaction" class="btn btn-primary">Ok</a>     
                 </div>                   
                 </div>
             </div>

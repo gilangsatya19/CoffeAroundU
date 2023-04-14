@@ -24,8 +24,11 @@
                 <p class="fw-semibold fs-4">Your Coffee</p>
             </div>
         </div>
+        <a href="/transaction" value="tambah" class="btn btn-primary text-white fw-semibold mt-5"
+            style="font-size: 22px;margin-left:25rem;width:15rem;height: 50px;background-color: #4A2C2A">Transaksi Penjualan</a>
         <a href="/my_products/create" value="tambah" class="btn btn-primary text-white fw-semibold mt-5"
-            style="font-size: 22px;margin-left:40rem;width:13rem;height: 50px;background-color: #4A2C2A">Add Coffee</a>
+            style="font-size: 22px;margin-left:3rem;width:13rem;height: 50px;background-color: #4A2C2A">Add Coffee</a>    
+        
     </div>
     @if (isset($data))
 
