@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Transaction;
 
 class TransactionController extends Controller
 {
@@ -13,7 +14,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return view('coffee.main.transactionInfo');
+        return view('coffee.main.transactionInfo',[
+            'data' => Transaction::get(),
+        ]);
     }
 
     /**

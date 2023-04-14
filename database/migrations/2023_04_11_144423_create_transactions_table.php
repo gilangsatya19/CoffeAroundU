@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->integer('harga_total');
+            
             $table->foreignId('id_user')->constrained('users');
             $table->foreignId('id_toko')->constrained('tokos');
             $table->timestamps();

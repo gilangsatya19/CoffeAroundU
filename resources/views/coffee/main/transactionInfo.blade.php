@@ -11,6 +11,7 @@
 @section('content')
 
     <div class="container" style="height: 70%">
+        {{-- <h2>{{$data}}</h2> --}}
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -23,47 +24,22 @@
                 <thead>
                     <tr>
                         <th>#</th>
-						<th>Order Date</th>						
-                        <th>Status</th>						
+						<th>Order Date</th>										
 						<th>Total Amount</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        
-
-                        <td> <a href="/details" class="text-black">1</a></td>
-                        <td> <a href="/details" class="text-black">April 15, 2023</a></td>
-                        <td> <a href="/details" class="text-black"><span class="text-success">&bull;</span> Delivered</a></td>
-                        <td> <a href="/details" class="text-black">Rp25.000</a></td>
+                    @foreach ($data as $item)
+                        <tr>
                             
-                        
-                    </tr>
-					<tr>
-                        <td> <a href="/" class="text-black">2</a></td>
-                        <td> <a href="/" class="text-black">April 15, 2023</a></td>
-                        <td> <a href="/" class="text-black"><span class="text-info">&bull;</span> Shipped</a></td>
-                        <td> <a href="/" class="text-black">Rp15.000</a></td>
-                        
-                    </tr>
-					<tr>
-                        <td> <a href="/" class="text-black">2</a></td>
-                        <td> <a href="/" class="text-black">April 15, 2023</a></td>
-                        <td> <a href="/" class="text-black"><span class="text-danger">&bull;</span> Cancelled</a></td>
-                        <td> <a href="/" class="text-black">Rp15.000</a></td>                   
-                    </tr>
-					<tr>
-                        <td>4</td>
-                        <td>April 15, 2023</td>						
-						<td><span class="text-warning">&bull;</span> Pending</td>
-						<td>Rp30.000</td>
-                    </tr>
-					<tr>
-                        <td>5</td>
-                        <td>April 15, 2023</td>
-						<td><span class="text-success">&bull;</span> Delivered</td>
-						<td>Rp25.000</td>
-                    </tr>
+
+                            <td> <a href="/details" class="text-black">{{$item->id}}</a></td>
+                            <td> <a href="/details" class="text-black">{{$item->created_at}}</a></td>
+                            
+
+                            <td> <a href="/details" class="text-black">Rp.{{$item->harga_total}}</a></td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

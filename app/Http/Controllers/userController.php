@@ -20,7 +20,7 @@ class UserController extends Controller
         
         return view('coffee.main.home', [
             'data' => Product::where('id_toko', session("toko_id"))->get(),
-            
+            'toko' => Toko::find(session('toko_id'))
         ]);
     }
 
