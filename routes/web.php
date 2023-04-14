@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ForgotpasswordController;
 use App\Http\Controllers\NewpasswordController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +49,8 @@ Route::resource('/my_toko', TokoController::class);
 
 Route::resource('/my_products', ProductController::class);
 
+Route::resource('/transaction', TransactionController::class);
+
 // SEMENTARA
 Route::get('/edit_product', function() {
     return view('coffee.editProduct');
@@ -69,9 +72,7 @@ Route::get('detail', function() {
     return view('coffee.detail');
 });
 
-Route::get('transaction', function() {
-    return view('coffee.main.transactionInfo');
-});
+
 
 Route::get('details', function() {
     return view('coffee.main.orderDetails');
