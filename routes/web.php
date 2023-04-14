@@ -69,4 +69,11 @@ Route::get('detail', function() {
     return view('coffee.detail');
 });
 
+Route::get('transaction', function() {
+    return view('coffee.main.transactionInfo');
+});
+
+Route::get('details', function() {
+    return view('coffee.main.orderDetails');
+});
 
