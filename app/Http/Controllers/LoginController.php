@@ -53,37 +53,6 @@ class LoginController extends Controller
     
         return redirect('/login');
     }
-    // public function create()
-    // {   
-    //     return view('coffee.login', [
-    //         'title' => 'Login',
-    //         'method'=> 'POST',
-    //         'action' => 'login'
-    //     ]);
-    // }
-
-    // // Primitive auth
-    // public function store(Request $request)
-    // {   
-    //     foreach (User::get() as $u) {
-    //         $found = false;
-    //         if($request->email == $u->email && $request->password == $u->password) {
-    //             foreach(Toko::get() as $t) {
-    //                 if($t->id_user == $u->id) {
-    //                     session(['toko_id' => $t->id]);
-    //                     session(['toko_nama' => $t->nama]);
-    //                     $found = true;
-    //                 }
-    //             }
-    //             session(['user_id' => $u->id]);
-    //             session(['user_nama' => $u->name]);
-    //             if($found) {
-    //                 return redirect('home');
-    //             } else {
-    //                 return redirect('/my_toko/create');
-    //             }
-    //         }
-    //     }
-    // }
+    
     
 }
