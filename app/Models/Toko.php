@@ -12,7 +12,15 @@ class Toko extends Model
         'nama',
         'map',
         'icon_url',
-        'id_user',
+        'user_id',
         
     ];
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

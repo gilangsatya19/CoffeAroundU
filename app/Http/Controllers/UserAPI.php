@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\LoginResource;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -21,7 +23,7 @@ class UserAPI extends Controller
 
         $validatedData['password'] = Hash::make($validatedData['password']);
         $user = User::create($validatedData);
-        return response()->json($user);
+        return response()->json(['data' => $user]);
     }
 
     public function update(Request $request, $id)
@@ -31,14 +33,17 @@ class UserAPI extends Controller
         $user->email = $request->email;
         $user->phone_number = $request->phone_number;
         $user->address = $request->address;
-        // $user->password = $request->password;
-        // $user->role = $request->role;
-        // $user->idToko = NULL;
         $user->save();
-        return response()->json($user);
+        return response()->json(['data' => $user]);
     }
-    public function tes(){
-        $users = User::all();
-        return response()->json($users);
+    public function me(){
+        // $user = User::find(auth()->user()->id);
+        // $toko = User::find(auth()->user()->id)->toko;
+        $user = User::find(auth()->user()->id);
+        // dump($user);
+        // dump($user->toko);
+        // dd($toko);
+        return response()->json(['data' => $user->toko]);
+        
     }
 }

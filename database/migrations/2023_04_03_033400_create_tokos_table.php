@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('map');
             $table->string('icon_url'); 
-            $table->foreignId('id_user')->constrained('users');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

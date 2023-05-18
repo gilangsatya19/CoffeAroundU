@@ -11,8 +11,8 @@ class Transaction extends Model
     protected $fillable = [
         'harga_total',
         
-        'id_user',
-        'id_toko',
+        'user_id',
+        'toko_id',
         
     ];
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TokoAPI;
 use App\Http\Controllers\LoginAPI;
+use App\Http\Controllers\ProductAPI;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -22,12 +23,18 @@ use App\Http\Controllers\UserAPI;
 //     return $request->user();
 // });
 
-Route::get('/tes', [UserAPI::class, 'tes']);
+Route::get('/me', [UserAPI::class, 'me'])->middleware(['auth:sanctum']);
 
 Route::post('/login', [LoginAPI::class, 'login']);
+Route::get('/logout', [LoginAPI::class, 'logout'])->middleware(['auth:sanctum']);
 
-Route::post('/register', [UserAPI::class, 'store'])->middleware(['auth:sanctum']);
+Route::post('/register', [UserAPI::class, 'store']);
+
 Route::get('/my_toko', [TokoAPI::class, 'index'])->middleware(['auth:sanctum']);
 Route::post('/my_toko', [TokoAPI::class, 'store'])->middleware(['auth:sanctum']);
+
+Route::get('/my_product', [ProductAPI::class, 'index'])->middleware(['auth:sanctum']);
+Route::get('/my_product/{id}', [ProductAPI::class, 'show'])->middleware(['auth:sanctum']);
+Route::post('/my_product', [ProductAPI::class, 'store'])->middleware(['auth:sanctum']);
 
 // Route::get('/cek_session', [TokoAPI::class, 'cek_session'])->middleware(['auth:sanctum']);

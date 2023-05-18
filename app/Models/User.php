@@ -26,6 +26,10 @@ class User extends Authenticatable
         'role',
         // 'id_toko',
     ];
+    public function toko()
+    {
+        return $this->hasOne(Toko::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

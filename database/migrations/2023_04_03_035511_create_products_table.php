@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('foto');
             $table->boolean('available');
             $table->string('reason');
-            $table->foreignId('id_toko')->constrained('tokos');
+            $table->foreignId('toko_id')->constrained('tokos');
             $table->timestamps();
         });
     }

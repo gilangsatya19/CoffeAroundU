@@ -15,7 +15,7 @@ class ProductController extends Controller
     // public function index()
     // {
     //     return view('coffee.main.home', [
-    //         'data' => Product::where('id_toko', session("toko_id"))->get(),
+    //         'data' => Product::where('toko_id', session("toko_id"))->get(),
     //     ]);
     // }
 
@@ -53,7 +53,7 @@ class ProductController extends Controller
         }
         $prod->available = $request->available;
         $prod->reason = '';
-        $prod->id_toko = session('toko_id');
+        $prod->toko_id = session('toko_id');
         $prod->save();
         return redirect('/home')->with('msg', 'sukses');
     }
@@ -109,7 +109,7 @@ class ProductController extends Controller
         }
         $prod->available = $request->available;
         $prod->reason = '';
-        $prod->id_toko = session('toko_id');
+        $prod->toko_id = session('toko_id');
         $prod->save();
         return redirect('/home')->with('msg', 'sukses');
     }

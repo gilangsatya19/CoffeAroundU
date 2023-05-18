@@ -28,7 +28,7 @@ class LoginController extends Controller
             $tokos = Toko::get();
             $has_toko = false;
             foreach($tokos as $t) {
-                if ($t->id_user == auth()->user()->id) {
+                if ($t->user_id == auth()->user()->id) {
                     $has_toko = true;
                     session(['toko_id' => $t->id]);
                     session(['toko_nama' => $t->nama]);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\LoginResource;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +24,15 @@ class LoginAPI extends Controller
                 'email' => ['The provided credentials are incorrect.'],
             ]);
         }
-     
-        return $user->createToken('Token')->plainTextToken;
+        
+        
+        // return response()->json(['data' => $user]);
+        // return LoginResource::$this->user;
+        // return new LoginResource(User::find($user->id));
+        return new LoginResource($user);
+    }
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
     }
 }

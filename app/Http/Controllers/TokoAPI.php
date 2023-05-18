@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Toko;
+use App\Models\User;
 
 
 class TokoAPI extends Controller
 {
     public function index()
     {
-        $tokos = Toko::all();
-        return response()->json($tokos);
+        
+        $user = User::find(auth()->user()->id);
+        return response()->json(['data' => $user->toko]);
     }
+
     public function store(Request $request)
     {
         $toko = new Toko;
@@ -25,17 +28,11 @@ class TokoAPI extends Controller
         //     $toko->icon_url = $filename;
         // }
         $toko->icon_url = $request->icon_url;
-        $toko->id_user = auth()->user()->id;
+        $toko->user_id = auth()->user()->id;
         $toko->save();
-        session(['toko_id' => $toko->id]);
-        session(['toko_nama' => $toko->nama]);
-        return response()->json($toko);
+        
+        return response()->json(['data' => $toko]);
 
     }
-    // public function cek_session()
-    // {
-    //     $tes = session('toko_id');
-
-    //     return response()->json($tes);
-    // }
+   
 }
