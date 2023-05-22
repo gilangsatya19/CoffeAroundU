@@ -27,7 +27,7 @@
                         {{-- <a href="#" class="text-decoration-underline" style="">Show Review</a> --}}
                     </div>
                 </div>
-                <p class="fw-medium text-dark fs-3" style="margin-left:40rem;">Rp. {{$data->harga}}</p>
+                <p class="fw-medium text-dark fs-3" style="margin-left:40rem;">{{$data->formatRupiah('harga')}}</p>
         </div>
         <p class="fw-regular text-dark fs-5" style="text-align: justify;margin-bottom:5rem;height: 10vh">{{$data->deskripsi_produk}}</p>
         <form method="POST" action="/my_products/{{$data->id}}" onsubmit="return confirm('Yakin hapus?')">

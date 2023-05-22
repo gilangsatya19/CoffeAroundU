@@ -16,7 +16,11 @@ return new class extends Migration
         Schema::create('tokos', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('map');
+            // $table->string('map');
+            // $table->float('latitude');
+            // $table->float('longitude');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->string('icon_url'); 
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();

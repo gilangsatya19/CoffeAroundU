@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailTransaction;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 
@@ -50,7 +51,7 @@ class TransactionController extends Controller
     {
         return view('coffee.main.orderDetails',[
 
-            'data' => Transaction::get(),
+            'data' => DetailTransaction::find($id),
         ]);
     }
 

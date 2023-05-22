@@ -10,7 +10,8 @@ class Toko extends Model
     use HasFactory;
     protected $fillable = [
         'nama',
-        'map',
+        'latitude',
+        'longitude',
         'icon_url',
         'user_id',
         

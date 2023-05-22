@@ -2,7 +2,7 @@
 
     <nav class="navbar navbar-expand-lg bg-white ">
         <div class="container-fluid">
-            <a class="navbar-brand mx-4" href="/"><img src="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}"
+            <a class="navbar-brand mx-4" href="/home"><img src="{{asset('coffeeAroundU/assets/logo/coffeebeans.png')}}"
                     width="80px" height="80px" alt="logo-coffeAroungU"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

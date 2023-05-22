@@ -23,7 +23,7 @@
                 {{-- <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div> --}}
                 <div class="px-4 py-5">
                     <h5 class="text-uppercase">Sales Details</h5>
-                <h4 class="mt-5 theme-color mb-5">Jonathan Alder</h4>
+                <h4 class="mt-5 theme-color mb-5">{{$data->nama}}</h4>
 
                 <span class="theme-color">Payment Summary</span>
                 <div class="mb-3">
@@ -32,7 +32,7 @@
 
                 <div class="d-flex justify-content-between">
                     <span class="font-weight-bold">Caramel Latte</span>
-                    <span class="text-muted">Rp 25000</span>
+                    <span class="text-muted">Rp.35.000</span>
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -42,17 +42,17 @@
                 <br>
                 <div class="d-flex justify-content-between">
                     <span class="font-weight-bold">Americano</span>
-                    <span class="text-muted">Rp 20000</span>
+                    <span class="text-muted">Rp.45.000</span>
                 </div>
 
                 <div class="d-flex justify-content-between">
                     <small>Quantity</small>
-                    <small>1</small>
+                    <small>2</small>
                 </div>
                 
                 <div class="d-flex justify-content-between mt-3">
                     <span class="font-weight-bold">Total</span>
-                    <span class="font-weight-bold theme-color">Rp 70000</span>
+                    <span class="font-weight-bold theme-color">{{$data->transaction->formatRupiah('harga_total')}}</span>
                 </div>  
                 <div class="text-center mt-5">
                     <a href="/transaction" class="btn btn-primary">Ok</a>     

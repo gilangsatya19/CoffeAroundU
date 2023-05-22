@@ -30,6 +30,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Toko::class);
     }
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

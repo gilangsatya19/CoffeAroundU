@@ -46,7 +46,7 @@
                             style="width: 100%;height: 20vh; object-fit: cover; object-position: center;">
                     </div>
                     <p class="fs-5 fw-semibold mx-2">{{$item->nama}}</p>
-                    <p class="fs-6 fw-semibold mx-2">RP. {{$item->harga}}</p>
+                    <p class="fs-6 fw-semibold mx-2">{{$item->formatRupiah('harga')}}</p>
                     <p class="fs-6 fw-semibold mx-2">{{$item->deskripsi_produk}}</p>
 
                 </div>

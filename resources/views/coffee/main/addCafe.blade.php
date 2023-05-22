@@ -33,9 +33,18 @@
                                     <input type="text" class="form-control border-black rounded-0" value="{{isset($data)?$data->nama:''}}" placeholder="Enter Name" name="nama" required>
                                 </div>
                                 <div class="mb-3 mx-5">
-                                    <label for="exampleInputPhone" class="form-label">Map Link</label>
-                                    <input type="text" class="form-control border-black rounded-0" value="{{isset($data)?$data->map:''}}" placeholder="Enter Map" name="map" required>
+                                    <h4>Map</h4>
+                                    {{-- <label for="latitude" class="form-label">Latitude</label>
+                                    <input type="number" step="0.01" class="form-control border-black rounded-0 mb-2" value="{{isset($data)?$data->latitude:''}}" placeholder="Enter Latitude" name="latitude" required>
+                                    <label for="longitude" class="form-label">Longitude</label>
+                                    <input type="number" step="0.01" class="form-control border-black rounded-0" value="{{isset($data)?$data->longitude:''}}" placeholder="Enter Longitude" name="longitude" required>
+                                     --}}
+                                     <label for="latitude" class="form-label">Latitude</label>
+                                    <input type="text" class="form-control border-black rounded-0 mb-2" value="{{isset($data)?$data->latitude:''}}" placeholder="Enter Latitude" name="latitude" required>
+                                    <label for="longitude" class="form-label">Longitude</label>
+                                    <input type="text" class="form-control border-black rounded-0" value="{{isset($data)?$data->longitude:''}}" placeholder="Enter Longitude" name="longitude" required>
                                 </div>
+                                
                                 <div class="mx-5 my-5">
                                     <div>
                                         <button class="btn btn-primary text-white fw-semibold me-5" style="background-color: #4A2C2A">Register</button>

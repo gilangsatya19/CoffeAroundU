@@ -37,7 +37,7 @@
                             <td> <a href="/transaction/show" class="text-black">{{$item->created_at}}</a></td>
                             
 
-                            <td> <a href="/transaction/show" class="text-black">Rp.{{$item->harga_total}}</a></td>
+                            <td> <a href="/transaction/{{$item->id}}" class="text-black">{{$item->formatRupiah('harga_total')}}</a></td>
                         </tr>
                     @endforeach
                 </tbody>

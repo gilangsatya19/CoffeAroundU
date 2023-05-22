@@ -43,7 +43,8 @@ class TokoController extends Controller
     {
         $toko = new Toko;
         $toko->nama = $request->nama;
-        $toko->map = $request->map;
+        $toko->latitude = $request->latitude;
+        $toko->longitude = $request->longitude;
         if($request->file('icon_url')) {
             $file = $request->file('icon_url');
             $filename= date('YmdHi').$file->getClientOriginalName();
@@ -94,7 +95,8 @@ class TokoController extends Controller
     {
         $toko = Toko::find($id);
         $toko->nama = $request->nama;
-        $toko->map = $request->map;
+        $toko->latitude = $request->latitude;
+        $toko->longitude = $request->longitude;
         if($request->file('icon_url')) {
             $file = $request->file('icon_url');
             $filename= date('YmdHi').$file->getClientOriginalName();
