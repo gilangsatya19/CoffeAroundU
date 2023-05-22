@@ -20,5 +20,13 @@ class Transaction extends Model
     {
         return $this->hasOne(DetailTransaction::class);
     }
+    public function toko()
+    {
+        return $this->belongsTo(Toko::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }
