@@ -31,18 +31,22 @@ Route::get('/logout', [LoginAPI::class, 'logout'])->middleware(['auth:sanctum'])
 
 Route::post('/register', [UserAPI::class, 'store']);
 
-Route::get('/my_toko', [TokoAPI::class, 'index'])->middleware(['auth:sanctum']);
+Route::get('/my_toko', [TokoAPI::class, 'index']);
+Route::get('/my_toko/{id}/show', [TokoAPI::class, 'show']);
 Route::post('/my_toko', [TokoAPI::class, 'store'])->middleware(['auth:sanctum']);
 Route::post('/my_toko/{id}', [TokoAPI::class, 'update'])->middleware(['auth:sanctum']);
 Route::post('/my_toko/{id}/destroy', [TokoAPI::class, 'destroy'])->middleware(['auth:sanctum']);
 
-Route::get('/my_product', [ProductAPI::class, 'index'])->middleware(['auth:sanctum']);
-Route::get('/my_product/{id}', [ProductAPI::class, 'show'])->middleware(['auth:sanctum']);
+Route::get('/my_product/{id}/by_toko', [ProductAPI::class, 'getProductByToko']);
+Route::get('/my_product', [ProductAPI::class, 'index']);
+Route::get('/my_product/{id}', [ProductAPI::class, 'show']);
 Route::post('/my_product', [ProductAPI::class, 'store'])->middleware(['auth:sanctum']);
 Route::post('/my_product/{id}', [ProductAPI::class, 'update'])->middleware(['auth:sanctum']);
 Route::post('/my_product/{id}/destroy', [ProductAPI::class, 'destroy'])->middleware(['auth:sanctum']);
 
-Route::get('/transaction', [TransactionAPI::class, 'index'])->middleware(['auth:sanctum']);
-Route::get('/transaction/{id}', [TransactionAPI::class, 'show'])->middleware(['auth:sanctum']);
+// Route::get('/transaction', [TransactionAPI::class, 'index'])->middleware(['auth:sanctum']);
+Route::post('/transaksi', [TransactionAPI::class, 'store']);
+Route::get('/transaksi/{id}/by_user', [TransactionAPI::class, 'getTransactionByUser']);
+// Route::get('/transaction/{id}', [TransactionAPI::class, 'show'])->middleware(['auth:sanctum']);
 
 // Route::get('/cek_session', [TokoAPI::class, 'cek_session'])->middleware(['auth:sanctum']);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Models\Toko;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,61 +12,20 @@ class ProductAPI extends Controller
 {
     public function index()
     {
-        $user = User::find(auth()->user()->id);
-        $toko = Toko::find($user->toko->id);
+        $prod = Product::all();
 
-        return response()->json(['data' => $toko->products]);
+        return ProductResource::collection($prod);
     }
     public function show($id)
     {
         $prod = Product::find($id);
         return response()->json(['data' => $prod]);
     }
-    public function store(Request $request)
+    public function getProductByToko($id)
     {
-        $user = User::find(auth()->user()->id);
-        $prod = new Product;
-        $prod->nama = $request->nama;
-        $prod->deskripsi_produk = $request->deskripsi_produk;
-        $prod->harga = $request->harga;
-        $prod->rating = 0;
-        $prod->foto = $request->foto;   
-        // if($request->file('foto')) {
-        //     $file = $request->file('foto');
-        //     $filename= date('YmdHi').$file->getClientOriginalName();
-        //     $file->move(public_path('public/Image'), $filename);
-        //     $prod->foto = $filename;
-        // }
-        $prod->available = $request->available;
-        $prod->reason = '';
-        $prod->toko_id = $user->toko->id;
-        $prod->save();
-        return response()->json(['data' => $prod]);
-    }
-    public function update(Request $request, $id)
-    {
-        $user = User::find(auth()->user()->id);
-        $prod = Product::find($id);
-        $prod->nama = $request->nama;
-        $prod->deskripsi_produk = $request->deskripsi_produk;
-        $prod->harga = $request->harga;
-        $prod->rating = 0;
-        $prod->foto = $request->foto;
-        // if($request->file('foto')) {
-        //     $file = $request->file('foto');
-        //     $filename= date('YmdHi').$file->getClientOriginalName();
-        //     $file->move(public_path('public/Image'), $filename);
-        //     $prod->foto = $filename;
-        // }
-        $prod->available = $request->available;
-        $prod->reason = $request->reason;
-        $prod->toko_id = $user->toko->id;
-        $prod->save();
-        return response()->json(['data' => $prod]);
-    }
-    public function destroy($id)
-    {
-        Product::destroy($id);
-        return response()->json("Delete Product Berhasil");
+        $toko = Toko::find($id);
+        $data = $toko->products;
+        // return response()->json(['data' => $data]);
+        return ProductResource::collection($data);
     }
 }

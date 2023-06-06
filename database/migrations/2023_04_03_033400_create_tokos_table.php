@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('tokos', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            // $table->string('map');
             // $table->float('latitude');
             // $table->float('longitude');
             $table->string('latitude');

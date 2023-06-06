@@ -33,8 +33,8 @@
                         <tr>
                             
 
-                            <td> <a href="/transaction/show" class="text-black">{{$item->id}}</a></td>
-                            <td> <a href="/transaction/show" class="text-black">{{$item->created_at}}</a></td>
+                            <td> <a href="/transaction/{{$item->id}}" class="text-black">{{$item->id}}</a></td>
+                            <td> <a href="/transaction/{{$item->id}}" class="text-black">{{$item->created_at}}</a></td>
                             
 
                             <td> <a href="/transaction/{{$item->id}}" class="text-black">{{$item->formatRupiah('harga_total')}}</a></td>

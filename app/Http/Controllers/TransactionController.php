@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DetailTransaction;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 
@@ -16,7 +17,7 @@ class TransactionController extends Controller
     public function index()
     {
         return view('coffee.main.transactionInfo',[
-            'data' => Transaction::get(),
+            'data' => auth()->user()->transactions,
         ]);
     }
 
@@ -49,10 +50,10 @@ class TransactionController extends Controller
      */
     public function show($id)
     {
-        return view('coffee.main.orderDetails',[
-
-            'data' => DetailTransaction::find($id),
-        ]);
+        $transaksi = Transaction::find($id);
+        $data = DetailTransaction::find($transaksi->detail->id);
+        $prod = Product::find($data->product_id);
+        return view('coffee.main.orderDetails', compact('data', 'prod'));
     }
 
     /**

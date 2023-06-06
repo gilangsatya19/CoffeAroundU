@@ -31,24 +31,15 @@
                 </div>
 
                 <div class="d-flex justify-content-between">
-                    <span class="font-weight-bold">Caramel Latte</span>
-                    <span class="text-muted">Rp.35.000</span>
+                    <span class="font-weight-bold">{{$prod->nama}}</span>
+                    <span class="text-muted">{{$prod->harga}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between">
                     <small>Quantity</small>
-                    <small>2</small>
+                    <small>1</small>
                 </div>
                 <br>
-                <div class="d-flex justify-content-between">
-                    <span class="font-weight-bold">Americano</span>
-                    <span class="text-muted">Rp.45.000</span>
-                </div>
-
-                <div class="d-flex justify-content-between">
-                    <small>Quantity</small>
-                    <small>2</small>
-                </div>
                 
                 <div class="d-flex justify-content-between mt-3">
                     <span class="font-weight-bold">Total</span>

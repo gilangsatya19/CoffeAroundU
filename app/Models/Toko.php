@@ -13,7 +13,6 @@ class Toko extends Model
         'latitude',
         'longitude',
         'icon_url',
-        'user_id',
         
     ];
     public function products()

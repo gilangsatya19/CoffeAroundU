@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->foreignId('transaction_id')->constrained('transactions');
+            $table->foreignId('product_id')->constrained('products');
             $table->timestamps();
         });
     }

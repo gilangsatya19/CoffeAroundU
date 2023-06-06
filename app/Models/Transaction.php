@@ -13,7 +13,6 @@ class Transaction extends Model
     protected $fillable = [
         'harga_total',
         'user_id',
-        'toko_id',
         
     ];
     public function detail()

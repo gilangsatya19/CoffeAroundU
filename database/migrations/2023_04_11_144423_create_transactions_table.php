@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('harga_total');
             
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('toko_id')->constrained('tokos');
             $table->timestamps();
         });
     }

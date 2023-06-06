@@ -23,7 +23,7 @@ class UserAPI extends Controller
 
         $validatedData['password'] = Hash::make($validatedData['password']);
         $user = User::create($validatedData);
-        return response()->json(['data' => $user]);
+        return response()->json(['success' => true,'message' => 'Register Berhasil','data' => $user]);
     }
 
     public function update(Request $request, $id)
@@ -34,7 +34,7 @@ class UserAPI extends Controller
         $user->phone_number = $request->phone_number;
         $user->address = $request->address;
         $user->save();
-        return response()->json(['data' => $user]);
+        return response()->json(['message' =>'Update User Berhasil','data' => $user]);
     }
     public function me(){
         // $user = User::find(auth()->user()->id);
