@@ -16,9 +16,10 @@ class TransactionAPI extends Controller
     {
 
         $prod = Product::find($request->prod_id);
+        $user_id = $prod->toko->user->id;
         $transaksi = new Transaction;
         $transaksi->harga_total = $prod->harga;
-        $transaksi->user_id = $request->user_id;
+        $transaksi->user_id = $user_id;
         $transaksi->save();
         $detail = new DetailTransaction;
         $pembeli = User::find($request->user_id);
